@@ -53,7 +53,9 @@ export const ItemList: React.FC<Prop> = (props) => {
         console.log(item.image)
         return (
           <div key={item.id} className='ItemList'>
-            <img src={'http://localhost:9000/image/'+item.image}  width="200" height="200"/>
+            <div className='img'>
+            <img src={'http://localhost:9000/image/'+item.image}  width="250" height="250"/>
+            </div>
             <p>
               <span>Name: {item.name}</span>
               <br />

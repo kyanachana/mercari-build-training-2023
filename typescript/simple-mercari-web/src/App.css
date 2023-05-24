@@ -26,6 +26,13 @@
   color: black;
 }
 
+img
+{
+	height: 250px;
+	width: 250px;
+	object-fit: cover;
+}
+
 .ItemList {
   background-color: white;
   min-height: 8vh;
