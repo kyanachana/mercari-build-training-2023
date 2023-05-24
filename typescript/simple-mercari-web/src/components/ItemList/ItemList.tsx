@@ -4,7 +4,8 @@ interface Item {
   id: number;
   name: string;
   category: string;
-  image_filename: string;
+  //image_filename: string;
+  image:string;
 };
 
 const server = process.env.REACT_APP_API_URL || 'http://127.0.0.1:9000';
@@ -47,11 +48,14 @@ export const ItemList: React.FC<Prop> = (props) => {
 
   return (
     <div>
+    <div className="wrapper">
       {items.map((item) => {
+        console.log(item.image)
         return (
           <div key={item.id} className='ItemList'>
-            {/* TODO: Task 1: Replace the placeholder image with the item image */}
-            <img src={placeholderImage} />
+            <div className='img'>
+            <img src={'http://localhost:9000/image/'+item.image}  width="250" height="250"/>
+            </div>
             <p>
               <span>Name: {item.name}</span>
               <br />
@@ -60,6 +64,7 @@ export const ItemList: React.FC<Prop> = (props) => {
           </div>
         )
       })}
+      </div>
     </div>
   )
 };
